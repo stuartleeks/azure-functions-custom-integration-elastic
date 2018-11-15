@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "AzureWebJobsDashboard": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "ElasticUrl": "http://localhost:9200",
+    "ElasticUsername": "elastic",
+    "ElasticPassword": "PasswordHere",
+    "EventHubConnection": "",
+    "CosmosDbConnectionString": ""
+  },
+  "ConnectionStrings": {}
+}

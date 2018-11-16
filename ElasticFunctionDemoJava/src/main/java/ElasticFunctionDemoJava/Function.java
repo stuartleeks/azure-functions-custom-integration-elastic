@@ -19,7 +19,7 @@ public class Function {
     public HttpResponseMessage run(
             @HttpTrigger(name = "request", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
             // @ElasticOutput(name = "message", index="people", indexType="wibble")
-            @ElasticOutput(name="elasticMessage", index="people", indexType="wibble")
+            @ElasticOutput(name="elasticMessage", index="people", indexType="wibble", superBlob = @BlobOutput(name = "customInput", path = ""))
             OutputBinding<Wibble> elasticMessage,
             final ExecutionContext context) {
         context.getLogger().info("Java HTTP trigger processed a request.");

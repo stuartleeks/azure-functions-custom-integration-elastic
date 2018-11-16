@@ -5,6 +5,7 @@ This is purely exploration code as a sample of the type of Azure Functions integ
 * Elastic.FunctionBinding - project with integration implementation
 * ElasticFunctionDemoCSharp - C# demo project for integration
 * ElasticFunctionDemoJavaScript - JavaScript demo project for integration
+* ElasticFunctionDemoJava - Java demo project for integration
 
 ## Misc notes
 

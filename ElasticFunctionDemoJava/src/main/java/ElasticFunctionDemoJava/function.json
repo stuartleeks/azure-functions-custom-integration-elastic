@@ -1,0 +1,25 @@
+{
+  "scriptFile": "zElasticFunctionDemoJava-1.0-SNAPSHOT.jar",
+  "entryPoint": "ElasticFunctionDemoJava.Function.run",
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "name": "request",
+      "direction": "in",
+      "authLevel": "anonymous",
+      "methods": [ "post" ]
+    },
+    {
+      "type": "http",
+      "name": "$return",
+      "direction": "out"
+    },
+    {
+      "type": "elastic",
+      "name": "elasticMessage",
+      "direction": "out",
+      "index": "people",
+      "indexType" : "wibble"
+    }
+  ]
+}

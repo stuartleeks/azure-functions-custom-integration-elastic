@@ -18,7 +18,7 @@ public class Function {
     @FunctionName("HttpTrigger-Java")
     public HttpResponseMessage run(
             @HttpTrigger(name = "request", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.FUNCTION) HttpRequestMessage<Optional<String>> request,
-            // @ElasticOutput(name = "message", index="people", indexType="wibble")
+            // temporary work-around as Java worker doesn't support custom bindings yet
             @ElasticOutput(name="elasticMessage", index="people", indexType="wibble", superBlob = @BlobOutput(name = "customInput", path = ""))
             OutputBinding<Wibble> elasticMessage,
             final ExecutionContext context) {
@@ -29,7 +29,7 @@ public class Function {
         String name = request.getBody().orElse(query);
         
         Wibble wibble = new Wibble();
-        wibble.setName("JavaFoo");
+        wibble.setName("JavaFoo-" + name);
         elasticMessage.setValue(wibble);
 
         if (name == null) {
@@ -39,16 +39,3 @@ public class Function {
         }
     }
 }
-
-class Wibble {
-    String name;
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-    public String getName(){
-        return this.name;
-    }
-}
-

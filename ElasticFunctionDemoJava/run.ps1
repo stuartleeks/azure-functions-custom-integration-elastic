@@ -1,0 +1,1 @@
+func host start --language-worker -- "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005" --script-root "target/azure-functions/ElasticFunctionDemoJava-1540824129043/"
